@@ -3,10 +3,11 @@ let
   HOOK_INDEX = 1;
 
   prune-lock-option = lib.mkOption {
+    description = "Configuration for automatically pruning flake.lock.";
     default = { };
     type = lib.types.submodule {
       options = {
-        enable = lib.mkEnableOption "Should we automatically prune flake.lock";
+        enable = lib.mkEnableOption "automatically pruning flake.lock";
         program = lib.mkOption {
           description = ''
             Function from pkgs to an exe derivation used to prune flake.lock.
@@ -16,7 +17,7 @@ let
 
             The output is expected to be deterministic.
           '';
-          example = lib.literalExample (builtins.readFile ./../prune-lock/_nothing.nix);
+          example = lib.literalExpression (builtins.readFile ./../prune-lock/_nothing.nix);
           type = lib.types.functionTo lib.types.unspecified;
           default = import ./../prune-lock/_nothing.nix;
         };

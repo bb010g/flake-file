@@ -44,6 +44,6 @@ in
     type = lib.types.str;
     default = "default";
     apply = output: easyOutputs.${output} or output;
-    example = lib.literalExample easyOutputs.dendritic;
+    example = lib.literalExpression easyOutputs.dendritic;
   };
 }

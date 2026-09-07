@@ -23,7 +23,10 @@ let
             type = lib.types.bool;
           };
           follows = follows-option;
-          inputs = inputs-follow-option;
+          inputs = inputs-follow-option // lib.mkOption {
+            # avoids infinite recursion when generating documentation
+            visible = "shallow";
+          };
         };
       }
     );

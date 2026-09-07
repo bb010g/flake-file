@@ -10,7 +10,7 @@
     '';
     type = lib.types.functionTo lib.types.unspecified;
     default = pkgs: pkgs.nixfmt;
-    example = lib.literalExample ''
+    example = lib.literalExpression ''
       pkgs: pkgs.nixfmt-rfc-style
     '';
   };

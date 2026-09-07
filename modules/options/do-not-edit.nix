@@ -15,7 +15,7 @@
           (s: if lib.hasSuffix "\n" s then s else s + "\n")
         ]
       );
-    example = lib.literalExample ''
+    example = lib.literalExpression ''
       "DO-NOT-EDIT"
     '';
   };

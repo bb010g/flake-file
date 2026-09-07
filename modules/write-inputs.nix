@@ -49,6 +49,7 @@ in
       type = lib.types.raw;
       description = "nixpkgs instance for unflake generator";
       default = import (top.inputs.nixpkgs or <nixpkgs>) { };
+      defaultText = lib.options.literalExpression ''import (inputs.nixpkgs or <nixpkgs>) { }'';
     };
 
     apps = lib.mkOption {
